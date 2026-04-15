@@ -55,7 +55,7 @@ Mac Health Check is particularly valuable in IT support workflows, serving as an
 ## Features
 The following health checks and information reporting are included in version `3.3.0b1`, which operates in `Self Service` mode by default. (Change `operationMode` to `Debug`, `Development` or `Test` when getting ready to deploy in production.)
 
-> :new: Mac Health Check version `3.3.0b1` adds `Homebrew Status`, which compares the installed Homebrew release and outdated package counts without mutating Homebrew state
+> Mac Health Check version `3.2.0` introduced a new persistent notification of failed health checks, which remains visible until user-dismissed
  
 <img src="images/MHC_3.2.0_failure_notification.png" alt="Health Checks" width="400"/>
 
@@ -63,10 +63,8 @@ The following health checks and information reporting are included in version `3
 
 <img src="images/MHC_3.2.0.png" alt="Health Checks" width="800"/>
 
-:tada: Updated for version `3.3.0b1`
-
 1. macOS Version
-1. :tada: Available Updates (including deferred and DDM-enforced updates)
+1. Available Updates (including deferred and DDM-enforced updates)
 1. System Integrity Protection
 1. Signed System Volume (SSV)
 1. Firewall
@@ -79,7 +77,7 @@ The following health checks and information reporting are included in version `3
 1. Bluetooth Sharing
 1. VPN Client
 1. Last Reboot
-1. :tada: Free Disk Space
+1. Free Disk Space
 1. User's Directory Size and Item Count
     - Desktop
     - Downloads
@@ -95,9 +93,9 @@ The following health checks and information reporting are included in version `3
     - Apple Software and Carrier Updates
     - Apple Certificate Validation
     - Apple Identity and Content Services
-    - :tada: Jamf Hosts
+    - Jamf Hosts
 1. App Auto-Patch
-1. Homebrew Status
+1. :new: Homebrew Status
 1. Electron Corner Mask [🔗](https://avarayr.github.io/shamelectron/)
 1. Organizationally required Applications (i.e., Microsoft Teams)
 1. BeyondTrust Privilege Management*
@@ -105,7 +103,7 @@ The following health checks and information reporting are included in version `3
 1. CrowdStrike Falcon*
 1. Palo Alto GlobalProtect*
 1. Network Quality Test
-1. :tada: Update Computer Inventory**
+1. Update Computer Inventory**
 
 *Requires [external check](/external-checks/README.md)
 **Requires Jamf Pro
@@ -202,10 +200,10 @@ Deployment of Mac Health Check involves configuring organizational defaults, upl
 
 A new "Development" Operation Mode has been added to aid in developing Health Checks, allowing the easy execution of a _single_ Health Check.
 
-<img src="images/MHC_3.0.0_Development_1.png" alt="Health Checks" width="800"/>
-<img src="images/MHC_3.0.0_Development_2.png" alt="Health Checks" width="800"/>
+<img src="images/MHC_3.3.0_Development_1.png" alt="Health Checks" width="800"/>
+<img src="images/MHC_3.3.0_Development_2.png" alt="Health Checks" width="800"/>
 
-When `operationMode` is set to `Development`, the current implementation uses a dedicated `developmentListitemJSON` with a single `Microsoft Teams` list item and runs only the matching `checkInternal()` validation. This keeps the loop short while preserving the normal non-`Silent` dialog flow.
+When `operationMode` is set to `Development`, the current implementation uses a dedicated `developmentListitemJSON` with a single `Homebrew Status` list item and runs only the matching `checkHomebrewStatus()` validation. This keeps the loop short while preserving the normal non-`Silent` dialog flow.
 
 ```zsh
 ####################################################################################################
@@ -226,7 +224,7 @@ if [[ "${operationMode}" == "Development" ]]; then
 
     developmentListitemJSON='
     [
-        {"title" : "Microsoft Teams", "subtitle" : "The hub for teamwork in Microsoft 365.", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
+        {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
     ]
     '
     # Validate developmentListitemJSON is valid JSON
@@ -253,9 +251,9 @@ if [[ "${operationMode}" == "Development" ]]; then
     # Operation Mode: Development
     notice "Operation Mode is ${operationMode}; using ${operationMode}-specific Health Check."
     dialogUpdate "title: ${humanReadableScriptName} (${scriptVersion})<br>Operation Mode: ${operationMode}"
-    set -x
-    checkInternal "0" "/Applications/Microsoft Teams.app" "/Applications/Microsoft Teams.app" "Microsoft Teams"
-    set +x
+    # set -x
+    checkHomebrewStatus "0"
+    # set +x
 
 else
 ```

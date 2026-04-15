@@ -91,7 +91,7 @@ graph TB
     subgraph ModeCheck2["🎛️ Operation Mode Branch"]
         MODESWITCH{"operationMode?"}
         ISSILENT["Silent Mode<br>Skip main dialog — log only"]
-        ISDEV["Development Mode<br>Run current single-check dev path<br>(Microsoft Teams)"]
+        ISDEV["Development Mode<br>Run current single-check dev path<br>(Homebrew)"]
         ISTEST["Test Mode<br>Simulate current vendor list items<br>without running real checks"]
         NORMAL["Self Service / Debug<br>Full interactive run"]
 

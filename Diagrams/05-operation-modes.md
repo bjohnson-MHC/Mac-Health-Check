@@ -100,7 +100,7 @@ Similar to Self Service, but with `set -x` tracing enabled plus swiftDialog debu
 ---
 
 ### Development
-Runs the current single-check development path in a normal non-`Silent` dialog flow. In `3.3.0b1`, that path renders one `Microsoft Teams` list item and executes the matching `checkInternal()` validation, making it useful for targeted iteration without running the full vendor-specific suite.
+Runs the current single-check development path in a normal non-`Silent` dialog flow. In `3.3.0b1`, that path renders one `Homebrew Status` list item and executes the matching `checkHomebrewStatus()` validation, making it useful for targeted iteration without running the full vendor-specific suite.
 
 **When to use:** Tuning check behavior, remediation copy, or dialog presentation while keeping the run shorter than a full production policy.
 
