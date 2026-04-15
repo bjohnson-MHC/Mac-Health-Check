@@ -4083,25 +4083,21 @@ function checkNetworkQuality() {
 function checkHomebrewStatus() {
 
     local humanReadableCheckName="Homebrew Status"
-    local homebrewUserPath="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     local brewBinary=""
     local installedHomebrewVersion=""
     local latestHomebrewVersion=""
     local outdatedFormulaeCount=""
     local outdatedCasksCount=""
-    local totalOutdatedCount="0"
-    local remediationMessage="Open Terminal and update Homebrew packages if you manage them on this Mac"
-    local statusSummary=""
     notice "Check ${humanReadableCheckName} …"
 
-    dialogUpdate "icon: SF=shippingbox.fill,${organizationColorScheme}"
+    dialogUpdate "icon: SF=mug.fill,${organizationColorScheme}"
     dialogUpdate "listitem: index: ${1}, icon: SF=$(printf "%02d" $(($1+1))).circle.fill $(echo "${organizationColorScheme}" | tr ',' ' '), iconalpha: 1, status: wait, statustext: Checking …"
     dialogUpdate "progress: increment"
     dialogUpdate "progresstext: Determining ${humanReadableCheckName} …"
 
     sleep "${anticipationDuration}"
 
-    brewBinary=$( runAsUser env PATH="${homebrewUserPath}" zsh -lc 'command -v brew 2>/dev/null' 2>/dev/null | grep '^/' | tail -1 | xargs )
+    brewBinary=$( runAsUser env PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" zsh -lc 'command -v brew 2>/dev/null' 2>/dev/null | grep '^/' | tail -1 | xargs )
     [[ -z "${brewBinary}" && -x "/opt/homebrew/bin/brew" ]] && brewBinary="/opt/homebrew/bin/brew"
     [[ -z "${brewBinary}" && -x "/usr/local/bin/brew" ]] && brewBinary="/usr/local/bin/brew"
 
@@ -4123,12 +4119,14 @@ function checkHomebrewStatus() {
         return
     fi
 
-    totalOutdatedCount=$(( outdatedFormulaeCount + outdatedCasksCount ))
+    local totalOutdatedCount=$(( outdatedFormulaeCount + outdatedCasksCount ))
 
     if [[ "${installedHomebrewVersion}" == "${latestHomebrewVersion}" ]] && (( totalOutdatedCount == 0 )); then
         dialogUpdate "listitem: index: ${1}, icon: SF=$(printf "%02d" $(($1+1))).circle.fill weight=semibold colour=#63CA56, iconalpha: 0.6, subtitle: ${organizationBoilerplateComplianceMessage}, status: success, statustext: ${installedHomebrewVersion} current"
         info "${humanReadableCheckName}: Installed ${installedHomebrewVersion}; latest ${latestHomebrewVersion}; outdated formulae ${outdatedFormulaeCount}; outdated casks ${outdatedCasksCount}"
     else
+        local statusSummary=""
+
         if [[ "${installedHomebrewVersion}" != "${latestHomebrewVersion}" ]] && (( totalOutdatedCount > 0 )); then
             statusSummary="${installedHomebrewVersion} vs ${latestHomebrewVersion}; ${totalOutdatedCount} outdated"
         elif [[ "${installedHomebrewVersion}" != "${latestHomebrewVersion}" ]]; then
@@ -4137,7 +4135,7 @@ function checkHomebrewStatus() {
             statusSummary="${totalOutdatedCount} outdated"
         fi
 
-        dialogUpdate "listitem: index: ${1}, icon: SF=$(printf "%02d" $(($1+1))).circle.fill weight=bold colour=#F8D84A, iconalpha: 1, subtitle: ${remediationMessage}, status: error, statustext: ${statusSummary}"
+        dialogUpdate "listitem: index: ${1}, icon: SF=$(printf "%02d" $(($1+1))).circle.fill weight=bold colour=#F8D84A, iconalpha: 1, subtitle: Open Terminal and update Homebrew packages if you manage them on this Mac, status: error, statustext: ${statusSummary}"
         errorOut "${humanReadableCheckName}: Installed ${installedHomebrewVersion}; latest ${latestHomebrewVersion}; outdated formulae ${outdatedFormulaeCount}; outdated casks ${outdatedCasksCount}"
         overallHealth+="${humanReadableCheckName}; "
     fi
