@@ -916,7 +916,7 @@ addigyMdmListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Microsoft Teams", "subtitle" : "The hub for teamwork in Microsoft 365.", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -963,7 +963,7 @@ filewaveMdmListitemJSON='
     {"title" : "Apple Software and Carrier Updates","subtitle":"Test connectivity to Apple software update endpoints","icon":"SF=25.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1011,7 +1011,7 @@ fleetMdmListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Fleet Desktop", "subtitle" : "Visibility into the security posture of your Mac.", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1059,7 +1059,7 @@ kandjiMdmListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Microsoft Teams", "subtitle" : "The hub for teamwork in Microsoft 365.", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1108,7 +1108,7 @@ jamfProListitemJSON='
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Jamf Hosts","subtitle":"Test connectivity to Jamf Pro cloud and on-prem endpoints","icon":"SF=28.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "App Auto-Patch", "subtitle" : "Keep your apps up-to-date to ensure their security and performance", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Microsoft Teams", "subtitle" : "The hub for teamwork in Microsoft 365.", "icon" : "SF=32.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "BeyondTrust Privilege Management", "subtitle" : "Privilege Management for Mac pairs powerful least-privilege management and application control", "icon" : "SF=33.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
@@ -1163,7 +1163,7 @@ jumpcloudMdmListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Microsoft Teams", "subtitle" : "The hub for teamwork in Microsoft 365.", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1212,7 +1212,7 @@ microsoftMdmListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=26.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Microsoft Company Portal", "subtitle" : "Securely access and manage corporate apps, resources, and devices via Intune.", "icon" : "SF=28.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1262,7 +1262,7 @@ mosyleListitemJSON='
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=27.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=28.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "'${mdmVendor}' Self-Service", "subtitle" : "Your one-stop shop for all things '${mdmVendor}'.", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=30.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=31.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=32.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -1307,7 +1307,7 @@ genericMdmListitemJSON='
     {"title" : "Apple Software and Carrier Updates","subtitle":"Test connectivity to Apple software update endpoints","icon":"SF=22.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Certificate Validation","subtitle":"Test connectivity to Apple certificate and OCSP services","icon":"SF=23.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
     {"title" : "Apple Identity and Content Services","subtitle":"Test connectivity to Apple Identity and Content services","icon":"SF=24.circle,'"${organizationColorScheme}"'", "status":"pending","statustext":"Pending …", "iconalpha" : 0.5},
-    {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=25.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
+    {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=25.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Electron Corner Mask", "subtitle" : "Detects susceptible Electron apps that may cause GPU slowdowns on macOS 26 Tahoe", "icon" : "SF=26.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5},
     {"title" : "Network Quality Test", "subtitle" : "Various networking-related tests of your Mac’s Internet connection", "icon" : "SF=27.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
 ]
@@ -4553,7 +4553,7 @@ if [[ "${operationMode}" == "Development" ]]; then
 
     developmentListitemJSON='
     [
-        {"title" : "Homebrew Status", "subtitle" : "Compare the installed Homebrew version and outdated packages with the latest release", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
+        {"title" : "Homebrew Status", "subtitle" : "If installed, compares the latest version of Homebrew — and any outdated packages — with the latest releases", "icon" : "SF=29.circle,'"${organizationColorScheme}"'", "status" : "pending", "statustext" : "Pending …", "iconalpha" : 0.5}
     ]
     '
     # Validate developmentListitemJSON is valid JSON
