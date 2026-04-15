@@ -1,17 +1,18 @@
 # Mac Health Check: Health Check Reference
 
-This text-only reference documents the key configurable defaults and runtime inventory for Mac Health Check `3.2.0`. No diagram is included; use [03-health-check-categories.md](03-health-check-categories.md) for a visual overview.
+This text-only reference documents the key configurable defaults and runtime inventory for Mac Health Check `3.3.0b1`. No diagram is included; use [03-health-check-categories.md](03-health-check-categories.md) for a visual overview.
 
 ---
 
-## 3.2.0 Runtime Notes
+## 3.3.0b1 Runtime Notes
 
-- `operationMode` is documented for the `3.2.0` release as `Self Service` by default, with `Silent`, `Debug`, `Development`, and `Test` also supported.
+- `operationMode` is documented for the `3.3.0b1` release as `Self Service` by default, with `Silent`, `Debug`, `Development`, and `Test` also supported.
 - Non-`Silent` runs with failures trigger `displayFailureNotification()`, which presents a persistent swiftDialog pseudo-alert summary of failed health checks.
 - Pre-flight requires swiftDialog `3.0.1.4955` or newer.
 - When `enableDockIntegration` is `true`, non-`Silent` runs show a Dock icon with a decreasing `dockiconbadge` count.
 - `checkAvailableSoftwareUpdates()` includes deferred and DDM-enforced OS update handling.
 - `checkFreeDiskSpace()` prefers Finder-aligned available capacity and falls back to `diskutil info /` when needed.
+- `checkHomebrewStatus()` compares the installed `Homebrew/brew` release and local outdated package counts without auto-updating Homebrew metadata.
 - Help and support content is built dynamically from `supportLabelN` / `supportValueN` pairs, with legacy support fields used as a fallback.
 - `updateComputerInventory()` is the final Jamf Pro-specific check in the Jamf Pro check set.
 
@@ -62,7 +63,7 @@ The support/help experience uses both legacy support fields and dynamic `support
 | `supportLabel1`–`supportLabel6` | Mixed defaults / blanks | Dynamic support labels shown in the help message |
 | `supportValue1`–`supportValue6` | Mixed defaults / blanks | Matching dynamic support values; empty pairs are skipped |
 
-**3.2.0 behavior notes**
+**3.3.0b1 behavior notes**
 
 - If all `supportLabelN` / `supportValueN` pairs are blank, the script falls back to the legacy `supportTeam*` and KB values.
 - The first URL-like `supportValueN` becomes the Info button action in the dialog.
@@ -110,6 +111,7 @@ The table below lists every health check function, its human-readable name, and 
 | Network | `checkNetworkHosts()` | Jamf Hosts | — | — | — | ✅ | — | — | — | — | — |
 | Network | `checkNetworkQuality()` | Network Quality Test | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Apps | `checkAppAutoPatch()` | App Auto-Patch | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| Apps | `checkHomebrewStatus()` | Homebrew Status | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Apps | `checkElectronCornerMask()` | Electron Corner Mask | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Apps | `checkInternal()` | Microsoft Teams | ✅ | — | ✅ | ✅ | ✅ | ✅ | — | — | — |
 | Apps | `checkInternal()` | Microsoft Company Portal | — | — | — | — | — | — | ✅ | — | — |
@@ -127,15 +129,15 @@ The table below lists every health check function, its human-readable name, and 
 
 | MDM Vendor | Total Checks |
 |---|---|
-| Jamf Pro | 37 |
-| Mosyle | 31 |
-| Addigy | 30 |
-| Filewave | 29 |
-| Fleet | 30 |
-| JumpCloud | 30 |
-| Kandji | 30 |
-| Microsoft Intune | 30 |
-| Generic / None | 26 |
+| Jamf Pro | 38 |
+| Mosyle | 32 |
+| Addigy | 31 |
+| Filewave | 30 |
+| Fleet | 31 |
+| JumpCloud | 31 |
+| Kandji | 31 |
+| Microsoft Intune | 31 |
+| Generic / None | 27 |
 
 > **Note:** `checkNetworkHosts()` is called once per host group; the five Apple host groups plus the Jamf-specific host group each count as one check. `checkUserDirectorySizeItems()` is called three times (Desktop, Downloads, Trash) and each counts as one check.
 

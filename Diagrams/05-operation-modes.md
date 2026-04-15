@@ -1,6 +1,6 @@
 # Mac Health Check: Operation Modes
 
-This diagram compares all five `3.2.0` Mac Health Check operation modes, showing how each mode differs in terms of UI, Dock behavior, logging, and intended use case.
+This diagram compares all five `3.3.0b1` Mac Health Check operation modes, showing how each mode differs in terms of UI, Dock behavior, logging, and intended use case.
 
 ```mermaid
 graph TB
@@ -31,8 +31,8 @@ graph TB
     end
 
     subgraph Development["🔧 Development"]
-        DV_DESC["Trigger: Manual / MDM policy<br>UI: swiftDialog — curated dev subset<br>Anticipation: 2s between checks<br>Dock badge: Yes (when enabled)<br>Completion timer: 60s auto-close<br>Logging: Full structured log"]
-        DV_USE["Use case:<br>Iterating on a curated set of<br>high-signal health checks"]
+        DV_DESC["Trigger: Manual / MDM policy<br>UI: swiftDialog — single current dev check<br>Anticipation: 2s between checks<br>Dock badge: Yes (when enabled)<br>Completion timer: 60s auto-close<br>Logging: Full structured log"]
+        DV_USE["Use case:<br>Iterating on one targeted check<br>without a full vendor run"]
 
         style DV_DESC fill:#fff4e6
         style DV_USE fill:#ffecb3
@@ -65,13 +65,13 @@ graph TB
 |---|---|---|---|---|---|
 | **Parameter 4 value** | `Self Service` | `Silent` | `Debug` | `Development` | `Test` |
 | **Is default?** | Yes | No | No | No | No |
-| **swiftDialog UI** | Full dialog | None | Full dialog | Curated dev subset | Full dialog |
+| **swiftDialog UI** | Full dialog | None | Full dialog | Single current dev check | Full dialog |
 | **Anticipation delay** | 2 seconds | 0 seconds | 2 seconds | 2 seconds | 2 seconds |
 | **Dock badge** | Yes (when enabled) | No | Yes (when enabled) | Yes (when enabled) | Yes (when enabled) |
 | **Completion timer** | 60s (configurable) | N/A | 60s (configurable) | 60s (configurable) | 60s (configurable) |
 | **Logging** | Full | Full | Full + `set -x` | Full structured log | Full structured log |
 | **Persistent failure notification** | If failures | No | If failures | If failures | No |
-| **Real check data** | Yes | Yes | Yes | Yes (curated subset) | No (simulated pass results) |
+| **Real check data** | Yes | Yes | Yes | Yes (single current dev check) | No (simulated pass results) |
 | **Intended actor** | End user | Automated | Administrator | Developer | Developer |
 
 ---
@@ -100,7 +100,7 @@ Similar to Self Service, but with `set -x` tracing enabled plus swiftDialog debu
 ---
 
 ### Development
-Runs a curated development subset of checks in a normal non-`Silent` dialog flow. In `3.2.0`, that subset covers Available Updates, AirDrop, Jamf Hosts, Free Disk Space, and the Desktop / Downloads / Trash size checks, making it useful for iterating on high-signal list items without running the full vendor-specific suite.
+Runs the current single-check development path in a normal non-`Silent` dialog flow. In `3.3.0b1`, that path renders one `Microsoft Teams` list item and executes the matching `checkInternal()` validation, making it useful for targeted iteration without running the full vendor-specific suite.
 
 **When to use:** Tuning check behavior, remediation copy, or dialog presentation while keeping the run shorter than a full production policy.
 

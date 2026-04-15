@@ -1,6 +1,6 @@
 # Mac Health Check: System Architecture
 
-This diagram shows the `3.2.0` Mac Health Check ecosystem, from administrator customization through MDM deployment, client-side execution, user interaction, and results output.
+This diagram shows the `3.3.0b1` Mac Health Check ecosystem, from administrator customization through MDM deployment, client-side execution, user interaction, and results output.
 
 ```mermaid
 graph TB

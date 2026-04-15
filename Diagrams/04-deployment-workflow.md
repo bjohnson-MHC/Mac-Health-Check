@@ -1,6 +1,6 @@
 # Mac Health Check: Deployment Workflow
 
-This diagram provides a step-by-step guide for deploying the `3.2.0` release of Mac Health Check through an MDM solution. Follow the phases in order for a successful deployment.
+This diagram provides a step-by-step guide for deploying the `3.3.0b1` release of Mac Health Check through an MDM solution. Follow the phases in order for a successful deployment.
 
 ```mermaid
 graph TB
@@ -111,7 +111,7 @@ graph TB
 
     subgraph Phase7["Phase 7: Testing"]
         P7A["Run in Debug mode<br>Parameter 4 = 'Debug'<br>Review set -x output"]
-        P7B["Run in Development mode<br>Parameter 4 = 'Development'<br>Exercise curated dev subset"]
+        P7B["Run in Development mode<br>Parameter 4 = 'Development'<br>Exercise current single-check dev path"]
         P7C["Run in Test mode<br>Parameter 4 = 'Test'<br>Validate full vendor UI with simulated success"]
         P7D{"All checks<br>render correctly?"}
         P7FIX["Review configuration<br>and re-test"]
@@ -241,7 +241,7 @@ Use the three developer-oriented modes to validate behavior before rolling out t
 | Mode | Purpose | How to Use |
 |---|---|---|
 | `Debug` | Shell tracing (`set -x`) for troubleshooting | Run policy and review MDM logs |
-| `Development` | Exercise the curated development check subset | Set Parameter 4 to `Development` |
+| `Development` | Exercise the current single-check development path | Set Parameter 4 to `Development` |
 | `Test` | Build the full current vendor list and mark each item successful without running the real checks | Validate UI layout and messages |
 
 ---
@@ -251,7 +251,7 @@ Use the three developer-oriented modes to validate behavior before rolling out t
 After production deployment, monitor:
 
 - **Client logs** at `/var/log/org.churchofjesuschrist.log` on managed Macs — look for `[WARNING]` and `[ERROR]` entries
-- **Dock badge and persistent failure notifications** on test Macs in non-`Silent` modes — confirm countdown badges update per check and failed runs show the `3.2.0` pseudo-alert summary and support action
+- **Dock badge and persistent failure notifications** on test Macs in non-`Silent` modes — confirm countdown badges update per check and failed runs show the `3.3.0b1` pseudo-alert summary and support action
 - **Webhook notifications** in Teams or Slack (if configured) — review failure summaries
 - **MDM inventory** — for Jamf Pro, each run can trigger a recon; use Smart Group criteria based on extension attributes for fleet-wide compliance visibility
 

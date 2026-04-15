@@ -1,6 +1,6 @@
 # Mac Health Check: Script Execution Flow
 
-This flowchart documents the `3.2.0` decision logic executed each time Mac Health Check runs, from the initial invocation through pre-flight validation, health check execution, and final output.
+This flowchart documents the `3.3.0b1` decision logic executed each time Mac Health Check runs, from the initial invocation through pre-flight validation, health check execution, and final output.
 
 ```mermaid
 graph TB
@@ -62,12 +62,12 @@ graph TB
     subgraph MDMDetect["🔍 MDM Vendor Detection"]
         DETECTMDM["Inspect installed profiles<br>Match against known MDM vendors"]
         MDMVENDOR{"MDM Vendor<br>Identified?"}
-        JAMF["Jamf Pro<br>37 checks"]
-        KANDJI["Kandji<br>30 checks"]
-        INTUNE["Microsoft Intune<br>30 checks"]
-        MOSYLE["Mosyle<br>31 checks"]
-        JUMPCLOUD["JumpCloud<br>30 checks"]
-        OTHERS["Addigy / Filewave<br>Fleet / Generic<br>28–30 checks"]
+        JAMF["Jamf Pro<br>38 checks"]
+        KANDJI["Kandji<br>31 checks"]
+        INTUNE["Microsoft Intune<br>31 checks"]
+        MOSYLE["Mosyle<br>32 checks"]
+        JUMPCLOUD["JumpCloud<br>31 checks"]
+        OTHERS["Addigy / Filewave<br>Fleet / Generic<br>27–31 checks"]
 
         DOCKBADGE --> DETECTMDM
         DETECTMDM --> MDMVENDOR
@@ -91,7 +91,7 @@ graph TB
     subgraph ModeCheck2["🎛️ Operation Mode Branch"]
         MODESWITCH{"operationMode?"}
         ISSILENT["Silent Mode<br>Skip main dialog — log only"]
-        ISDEV["Development Mode<br>Run curated dev subset<br>(Updates, AirDrop, Jamf Hosts,<br>Disk and user folders)"]
+        ISDEV["Development Mode<br>Run current single-check dev path<br>(Microsoft Teams)"]
         ISTEST["Test Mode<br>Simulate current vendor list items<br>without running real checks"]
         NORMAL["Self Service / Debug<br>Full interactive run"]
 

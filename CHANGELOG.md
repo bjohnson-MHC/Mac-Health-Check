@@ -2,6 +2,9 @@
 
 ## CHANGELOG
 
+### 3.3.0b1 (15-Apr-2026)
+- Added `checkHomebrewStatus()` to compare the installed Homebrew version with the latest `brew` release and report outdated formula / cask counts to address: [Feature Request #87](https://github.com/dan-snelson/Mac-Health-Check/issues/87)
+
 ### 3.2.0 (02-Apr-2026)
 - Preserved user-provided local `organizationOverlayiconURL` files by downloading remote overlay icons to a per-run temporary file and only cleaning up that script-managed asset at exit (Thanks for the heads-up, @brian_b!)
 - Corrected Jamf Pro inventory warning text for non-SSO sessions so omitted `-endUsername` logging now explains that no SSO username was available for the logged-in user.
